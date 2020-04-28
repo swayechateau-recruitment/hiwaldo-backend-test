@@ -1,25 +1,24 @@
+# Waldo Backend PHP Developer Test Installation
+Please ensure you have a `mongodb server` up
+Run `composer install` in the root directory
+
 # Waldo Backend PHP Developer Test
 
-These scripts present a problem related to sorting large datasets in PHP 7.
-To execute the task, you should use your console to execute `script.php` using the PHP CLI.
+In Total the test has taken me 10 hours, 8 of which I kept making school boy errors, be it typos or
+not reading the readme correctly.
 
-In the data directory, you will find two files with junk personal data in them, `junk-data.json` and `junk-data-full.json`.
-These files are referenced in the `$dataFiles` array in `script.php`. The `script.php` file utilizes the `BrokenSort` class,
-which implements the `SortInterface` interface. `script.php` expects the class to read data from either one of these files,
-and sort the values according to the `registered` attribute, in ascending order.
+After taking a long break and coming back to the issue to fix the BrokenSorter (now deleted) from the beginning. It has taken me 2 hours to complete, including installing mongodb.
 
-The `BrokenSorter` class is successfully able to sort and parse the `junk-data.json`, however, it will fail when using
-`junk-data-full.json`.
+**Note:** I have tackled this problem as if I encountered it in real life. Using mongodb for a large json dataset and sorting the data, which helps take the load off of PHP, as mush as PHP is great and a lot faster with PHP 7 then PHP 5, it still needs a helping hand... much like us :')
 
-Your task is to create a new implementation of the `SortInterface`, that is able to successfully
-read and parse the `junk-data-full.json` data file (100,000 records) and dump each item to the console, in ascending
-order, according to the `registered` attribute. You should not change the max memory allocation.
+## Technologies Used
+Composer
+ - "halaxa/json-machine": "^0.3.3"
+ - "mongodb/mongodb": "^1.0.0.0"
 
-**Note:** Try to imagine how you would solve this problem if you encountered it in real life. You are free to use any
-PHP bolt-ons / additions you find via composer, or any external software applications.  If you do so, please note which
-ones and why you've chosen to use them.
+Database
+ - MongoDb
 
-Please direct any questions to callum@hiwaldo.com
-
-## Estimated Time To Complete
-1-2 Hours. Please let us know how long you spent on the task when submitting your code.
+PHP
+ - PHP Version 7.2
+ - PHP 7.2 Mongodb Extension
