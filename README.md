@@ -1,6 +1,5 @@
 # Waldo Backend PHP Developer Test Installation
-Please ensure you have a `mongodb server` up
-Run `composer install` in the root directory
+Please ensure you have a `mongodb server` up and ran `composer install` in the root directory
 
 # Waldo Backend PHP Developer Test
 
