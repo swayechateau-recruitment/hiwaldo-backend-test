@@ -12,7 +12,7 @@ class JsonSorter implements SortInterface
     protected $tableName;
     protected $iterated;
     protected $items;
-    protected $limit = 1000;
+    protected $limit = 2000;
 
     public function __construct($fileName)
     {
@@ -43,8 +43,10 @@ class JsonSorter implements SortInterface
             print_r('All entries in file found on server'.PHP_EOL);
         } elseif($duplicates > 0) {
             print_r('Found '.$duplicates.' duplicated enteries on server, out of '.$this->iterated.' entries in file'.PHP_EOL);
+        } else{
+           print_r('All entries in file migrated to server'.PHP_EOL); 
         }
-        print_r('All entries in file migrated to server'.PHP_EOL);
+        
 
     }
 
@@ -54,9 +56,11 @@ class JsonSorter implements SortInterface
             $options = ['sort' => ['registered' => 1], 'limit'=> $this->limit, 'skip'=> $i];
             $collection = $this->conn->sort->{$this->tableName};
             $this->items = $collection->find($filter,$options)->toArray();
+            var_dump($this->items);
+            /*
             foreach ($this->items as $item) {
                 var_dump($item);
-            }
+            }*/
         }
     }
 
