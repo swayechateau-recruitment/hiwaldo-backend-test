@@ -18,7 +18,7 @@ class JsonSorter implements SortInterface
     {
         $this->fileName = $fileName;
         $this->tableName = basename($fileName, ".json");
-        $this->conn = new Client();
+        $this->conn = new Client('mongodb://localhost:27017');
         $this->iterated = 0;
     }
 
@@ -46,8 +46,6 @@ class JsonSorter implements SortInterface
         } else{
            print_r('All entries in file migrated to server'.PHP_EOL); 
         }
-        
-
     }
 
     public function renderItems(): void {   
